@@ -114,11 +114,10 @@ class OurNeuralNetwork:
                 self.w6 -= learn_rate * d_L_d_ypred * d_ypred_d_w6
                 self.b3 -= learn_rate * d_L_d_ypred * d_ypred_d_b3
  
-            # --- Подсчитываем общую потерю в конце каждой фазы
             if epoch % 10 == 0:
                 y_preds = np.apply_along_axis(self.feedforward, 1, data)
                 loss = mse_loss(all_y_trues, y_preds)
-                print("Epoch %d loss: %.3f" % (epoch, loss))
+                # print("Epoch %d loss: %.3f" % (epoch, loss))
                 
 
  
@@ -151,7 +150,3 @@ all_y_trues = np.array([
 # Тренируем нашу нейронную сеть!
 network = OurNeuralNetwork()
 network.train(data, all_y_trues)
-
-data = np.array([
-    [-1, 6]])
-print(network.result(data))
