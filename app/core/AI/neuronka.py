@@ -14,6 +14,7 @@ def deriv_sigmoid(x):
  
 def mse_loss(y_true, y_pred):
     # y_true и y_pred являются массивами numpy с одинаковой длиной
+    # среднее арифметическое 
     return ((y_true - y_pred) ** 2).mean()
  
  
